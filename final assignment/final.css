@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+#wrap {
+  /* background: url(images/bg_5.jpg); */
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+}
+#wrap input[type="text"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 5px;
+  outline: none;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #fff;
+}
+button {
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 6px 3px rgb(0, 0, 0, 0.4);
+}
+.hidden {
+  display: none;
+}
+.greeting {
+  font-weight: 500;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 3% 0;
+}
+.btn_random {
+  font-size: 12px;
+}
+#clock {
+  font-weight: 100;
+}
+.login_wrap {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.login_form input {
+  font-size: 18px;
+  margin-right: 10px;
+  width: 175px;
+}
+.todo_wrap {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.todo_wrap input {
+  width: 250px;
+  padding-left: 2em;
+}
+#todoList {
+  /* background-color: rgba(255, 255, 255, 0.4); */
+  border-radius: 12px;
+}
+#todoList button {
+  width: 10%;
+  font-size: 12px;
+}
+
+#todoList li {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#weather > span {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+#weather > span > span {
+  margin-left: 5px;
+}
+.location {
+  padding-bottom: 5px;
+}
+#quote {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate3d(-50%, -50%, 0);
+  /* height: 50px; */
+  text-align: center;
+}
+
+#quote .text {
+  font-size: 15px;
+}
+#quote .author {
+  display: block;
+  font-size: 13px;
+  padding-top: 10px;
+}
+/* #quote .text {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  top: -30px;
+  opacity: 0;
+  transition: all 0.8s linear;
+}
+#quote .author {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0;
+  transition: all 0.8s linear;
+}
+#quote .text.show {
+  top: 0;
+  opacity: 1;
+}
+#quote .author.show {
+  bottom: 0;
+  opacity: 1;
+} */
