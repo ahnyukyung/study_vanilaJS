@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Random Number Game</h1>
+    <form id="gameForm">
+      <p>
+        Generate a number between 0 and
+        <input type="number" id="maxNum" min="0" required />
+      </p>
+      Guess the number : <input type="number" id="guessNum" min="0" required />
+      <button>PLAY!</button>
+    </form>
+    You chose: <span id="userNum"></span>, the machine chose: <span id="machineNum"></span>
+    <h2 class="result"></h2>
+
+    <script>
+      const gameForm = document.querySelector('#gameForm');
+      const maxNum = document.querySelector('#maxNum');
+      const guessNum = document.querySelector('#guessNum');
+      const userNum = document.querySelector('#userNum');
+      const machineNum = document.querySelector('#machineNum');
+      const result = document.querySelector('.result');
+
+      function submitPlay(event) {
+        event.preventDefault();
+        const maxNumV = maxNum.value;
+        const guessNumV = Number(guessNum.value);
+        const randomNum = Math.floor(Math.random() * maxNumV);
+
+        machineNum.innerText = randomNum;
+        userNum.innerText = guessNumV;
+        if (randomNum === guessNumV) {
+          result.innerText = 'you win!';
+        } else {
+          result.innerText = 'you lostㅠ';
+        }
+      }
+
+      gameForm.addEventListener('submit', submitPlay);
+    </script>
+  </body>
+</html>

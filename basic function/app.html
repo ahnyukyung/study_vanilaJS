@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="hidden"></h1>
+    <form class="login_form hidden">
+      <input required maxlength="15" type="text" placeholder="What's your Name?" />
+      <button>Login</button>
+    </form>
+    <form id="todoForm">
+      <input type="text" placeholder="Write a To Do and Press Enter" required />
+    </form>
+    <ul id="todoList">
+      <!-- <li>dfdf</li> -->
+    </ul>
+    <h2 id="clock"></h2>
+    <div id="quote">
+      <span></span>
+      <span></span>
+    </div>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+    <script src="greetings.js"></script>
+    <script src="clock.js"></script>
+    <script src="quote.js"></script>
+    <script src="randomBG.js"></script>
+    <script src="todo.js"></script>
+    <script src="weather.js"></script>
+  </body>
+</html>

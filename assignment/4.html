@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Time Until Christmas Eve</h1>
+    <h2 class="js-clock"></h2>
+    <script>
+      const clockTitle = document.querySelector('.js-clock');
+
+      function christmasCount() {
+        const today = new Date().getTime();
+        const christmas = new Date('2021-12-25 00:00:00').getTime();
+        const remainTime = (christmas - today) / 1000;
+
+        const date = String(Math.floor(remainTime / (60 * 60 * 24))).padStart(2, 0);
+        const hours = Math.floor((remainTime / (60 * 60)) % 24);
+        const miniutes = Math.floor(remainTime / 60) % 60;
+        const seconds = Math.floor(remainTime % 60);
+
+        clockTitle.innerText = `${date}d ${hours}h ${miniutes}m ${seconds}s`;
+      }
+
+      christmasCount();
+      setInterval(christmasCount, 1000);
+    </script>
+  </body>
+</html>

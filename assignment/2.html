@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <script>
+      const body = document.querySelector('body');
+      const smallWidth = 600;
+      const middleWidth = 800;
+      const largeWidth = 1000;
+
+      window.addEventListener('resize', changeBackColor);
+
+      function changeBackColor() {
+        const windowWidth = window.innerWidth;
+        if (windowWidth <= middleWidth && windowWidth > smallWidth) {
+          body.style.backgroundColor = 'cornflowerblue';
+        } else if (windowWidth < largeWidth && windowWidth > middleWidth) {
+          body.style.backgroundColor = 'darksalmon';
+        } else {
+          body.style.backgroundColor = 'darkgoldenrod';
+        }
+      }
+
+      body.style.backgroundColor = 'teal';
+      document.querySelector('h1').style.color = '#fff';
+    </script>
+  </body>
+</html>
