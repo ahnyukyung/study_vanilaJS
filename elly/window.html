@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #wrap {
+        background-color: teal;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap"></div>
+    <p class="window_screen"></p>
+    <script>
+      const windowScreen = window.screen;
+      const windowScreenWidth = windowScreen.width;
+      const windowScreenHeight = windowScreen.height;
+
+      const windowOuterWidth = window.outerWidth;
+      const windowOuterHeight = window.outerHeight;
+
+      const windowInnerWidth = window.innerWidth;
+      const windowInnerHeight = window.innerHeight;
+
+      const documentWidth = document.documentElement.clientWidth;
+      const documentHeight = document.documentElement.clientHeight;
+      console.log(documentWidth);
+    </script>
+  </body>
+</html>
