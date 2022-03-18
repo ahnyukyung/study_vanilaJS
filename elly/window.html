@@ -13,22 +13,34 @@
     </style>
   </head>
   <body>
-    <div id="wrap"></div>
-    <p class="window_screen"></p>
+    <div id="wrap">
+      <p class="screen"></p>
+      <p class="outer"></p>
+      <p class="inner"></p>
+      <p class="document_size"></p>
+    </div>
+
     <script>
-      const windowScreen = window.screen;
-      const windowScreenWidth = windowScreen.width;
-      const windowScreenHeight = windowScreen.height;
+      function windowResize() {
+        const windowScreen = window.screen;
+        const windowScreenWidth = windowScreen.width;
+        const windowScreenHeight = windowScreen.height;
 
-      const windowOuterWidth = window.outerWidth;
-      const windowOuterHeight = window.outerHeight;
+        const windowOuterWidth = window.outerWidth;
+        const windowOuterHeight = window.outerHeight;
 
-      const windowInnerWidth = window.innerWidth;
-      const windowInnerHeight = window.innerHeight;
+        const windowInnerWidth = window.innerWidth;
+        const windowInnerHeight = window.innerHeight;
 
-      const documentWidth = document.documentElement.clientWidth;
-      const documentHeight = document.documentElement.clientHeight;
-      console.log(documentWidth);
+        const documentWidth = document.documentElement.clientWidth;
+        const documentHeight = document.documentElement.clientHeight;
+        function inputText() {
+          const screen = document.querySelector(".screen");
+          screen.innerText = `${windowScreenWidth}, ${windowScreenHeight}`;
+        }
+      }
+      inputText();
+      window.addEventListener("resize", windowResize);
     </script>
   </body>
 </html>
