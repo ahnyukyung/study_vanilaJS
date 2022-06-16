@@ -4,10 +4,19 @@ const btnBg = wrap.querySelector(".btn_random");
 function changeBg() {
   const backGround = ["bg_0.jpg", "bg_1.jpg", "bg_2.jpg", "bg_3.jpg", "bg_4.jpg", "bg_5.jpg"];
   const randomNumber = Math.floor(Math.random() * 6);
-  wrap.style.backgroundImage = `url(images/${backGround[randomNumber]})`;
+  wrap.style.backgroundImage = `url(assets/images/${backGround[randomNumber]})`;
 }
 changeBg();
 btnBg.addEventListener("click", changeBg);
+
+// lottie
+const lottieAnimation = bodymovin.loadAnimation({
+  container: $("#lottie")[0],
+  path: "https://assets7.lottiefiles.com/packages/lf20_9aq9An.json",
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+});
 
 // clock
 const clock = document.querySelector("#clock");
