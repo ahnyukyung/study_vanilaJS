@@ -5,40 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="test.js" defer></script>
     <style>
       #wrap {
-        background-color: teal;
-        color: #fff;
+        margin: auto;
+      }
+      div {
+        background-color: bisque;
+        width: 250px;
+        height: 250px;
+        margin-bottom: 10px;
+      }
+      div.special {
+        background-color: rgb(254, 155, 144);
+      }
+      aside {
+        position: fixed;
+        top: 0;
+        right: 0;
       }
     </style>
   </head>
   <body>
     <div id="wrap">
-      <p class="screen"></p>
-      <p class="outer"></p>
-      <p class="inner"></p>
-      <p class="document_size"></p>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="special"><span class="result"></span></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-
+    <aside>
+      <button id="btnDown">scroll by 100px(Y)</button>
+      <button id="btn100">scroll to 100px(Y)</button>
+      <button id="btnSpecial">scroll into special</button>
+    </aside>
     <script>
-      function windowResize() {
-        const windowScreen = window.screen;
-        const windowScreenWidth = windowScreen.width;
-        const windowScreenHeight = windowScreen.height;
+      const special = document.querySelector(".special");
+      const result = document.querySelector(".result");
+      special.addEventListener("click", (e) => {
+        result.innerHTML = `
+        page: ${e.pageX}, ${e.pageY} /
+        client:${e.clientX}, ${e.clientY}/
+        offset:${e.offsetX}, ${e.offsetY}/    
+        screen:${e.screenX}, ${e.screenY}
+        `;
+      });
 
-        const windowOuterWidth = window.outerWidth;
-        const windowOuterHeight = window.outerHeight;
+      const btnDown = document.querySelector("#btnDown");
+      const btn100 = document.querySelector("#btn100");
+      const btnSpecial = document.querySelector("#btnSpecial");
 
-        const windowInnerWidth = window.innerWidth;
-        const windowInnerHeight = window.innerHeight;
+      // let scroll = window.scrollY;
+      // console.log(scroll);
 
-        const documentWidth = document.documentElement.clientWidth;
-        const documentHeight = document.documentElement.clientHeight;
-        function inputText() {
-          const screen = document.querySelector(".screen");
-          screen.innerText = `${windowScreenWidth}, ${windowScreenHeight}`;
-        }
-      }
+      const specialRect = special.getBoundingClientRect().top;
+      console.log(specialRect);
+
+      btnDown.addEventListener("click", () => {
+        window.scrollBy({
+          top: 100,
+          behavior: "smooth",
+        });
+      });
+      btn100.addEventListener("click", () => {
+        window.scrollTo({
+          top: 100,
+          behavior: "smooth",
+        });
+      });
+      btnSpecial.addEventListener("click", () => {
+        special.scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+        });
+      });
+
+      // HTML 로드 완료되면 호출
+      window.addEventListener("DOMContentLoaded", () => {
+        console.log("DOMContentLoaded");
+      });
+
+      // 리소스(css,images)까지 로드 완료되면 호출
+      window.addEventListener("load", () => {
+        console.log("load");
+      });
     </script>
   </body>
 </html>

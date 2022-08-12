@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .pointer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        background: url(./img/target.png) no-repeat center center / cover;
+      }
+      .screenLog {
+        font-size: 13px;
+        position: absolute;
+        bottom: -30px;
+        right: -30px;
+        width: 100%;
+      }
+      .vertical {
+        width: 1px;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+      }
+
+      .horizontal {
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical"></div>
+    <div class="horizontal"></div>
+    <div class="pointer">
+      <p class="screenLog"></p>
+    </div>
+  </body>
+</html>
